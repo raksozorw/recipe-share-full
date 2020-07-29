@@ -24,4 +24,4 @@ yarn-error.log*
 
 #googlecloud
 
-/config.keys.json
+/config/keys.json
