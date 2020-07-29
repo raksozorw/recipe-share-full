@@ -1,11 +1,17 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 mongoose
-    .connect('mongodb://127.0.0.1:27017/recipes', { useNewUrlParser: true })
-    .catch(e => {
-        console.error('Connection error', e.message)
-    })
+  .connect(
+    "mongodb+srv://admin-oskar:test123@cluster0-fio01.mongodb.net/recipeshareDB",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .catch((e) => {
+    console.error("Connection error", e.message);
+  });
 
-const db = mongoose.connection
+const db = mongoose.connection;
 
-module.exports = db
+module.exports = db;
