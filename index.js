@@ -51,7 +51,7 @@ const makeId = (length) => {
   return result;
 };
 
-app.post("/api/upload", (req, res) => {
+app.post("/upload", (req, res) => {
   console.log("upload request made");
   console.log(req);
   // if (req.files === null) {
