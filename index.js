@@ -51,7 +51,7 @@ const makeId = (length) => {
   return result;
 };
 
-app.post("/api/upload", async (req, res) => {
+app.post("/upload", async (req, res) => {
   if (req.files === null) {
     return res.status(400).json({ msg: "no file was uploaded" });
   }
