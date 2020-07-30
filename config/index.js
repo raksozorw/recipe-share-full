@@ -2,7 +2,7 @@ const Cloud = require("@google-cloud/storage");
 const path = require("path");
 require("dotenv").config();
 const serviceKey2 = process.env.GOOGLE_APPLICATION_CREDENTIALS;
-const credentials = process.env.GOOGLE_CREDENTIALS;
+const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
 
 const serviceKey = path.join(__dirname, "./keys.js");
 
