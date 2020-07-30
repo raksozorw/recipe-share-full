@@ -51,37 +51,37 @@ const makeId = (length) => {
   return result;
 };
 
-app.post("/upload", (req, res) => {
+app.post("/upload", async (req, res) => {
   console.log("upload request made");
   console.log(req);
-  res.sendFile(path.join(reactFiles + "/index.html"));
-  // if (req.files === null) {
-  //   return res.status(400).json({ msg: "no file was uploaded" });
-  // }
+  // res.sendFile(path.join(reactFiles + "/index.html"));
+  if (req.files === null) {
+    return res.status(400).json({ msg: "no file was uploaded" });
+  }
 
-  // const file = req.files.file;
+  const file = req.files.file;
 
-  // const fileName = makeId(5) + file.name;
+  const fileName = makeId(5) + file.name;
 
-  // try {
-  //   const fileName = makeId(5) + req.files.file.name;
-  //   const myFile = {
-  //     originalname: fileName,
-  //     buffer: req.files.file.data,
-  //   };
+  try {
+    const fileName = makeId(5) + req.files.file.name;
+    const myFile = {
+      originalname: fileName,
+      buffer: req.files.file.data,
+    };
 
-  //   const imageUrl = await uploadImage(myFile);
-  //   console.log(imageUrl);
-  //   res.status(200).json({
-  //     fileName: fileName,
-  //     filePath: imageUrl,
-  //   });
+    const imageUrl = await uploadImage(myFile);
+    console.log(imageUrl);
+    res.status(200).json({
+      fileName: fileName,
+      filePath: imageUrl,
+    });
 
-  //   //   }
-  // } catch (error) {
-  //   console.log(error);
-  //   next(error);
-  // }
+    //   }
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 
   // file.mv(
   //   `/Users/oskarwroz/Documents/WebDev-Projects/recipe-share-app/client/public/uploads/${fileName}`,
