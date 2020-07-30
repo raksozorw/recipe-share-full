@@ -54,6 +54,7 @@ const makeId = (length) => {
 app.post("/upload", (req, res) => {
   console.log("upload request made");
   console.log(req);
+  res.sendFile(path.join(reactFiles + "/index.html"));
   // if (req.files === null) {
   //   return res.status(400).json({ msg: "no file was uploaded" });
   // }
