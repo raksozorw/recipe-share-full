@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const uploadImage = require("./helpers");
+const path = require("path");
 
 const db = require("./db");
 const recipeRouter = require("./routes/recipe-router");
@@ -17,8 +18,23 @@ app.use(fileUpload());
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
+const reactFiles = path.join(__dirname, "./build");
+
+app.use(express.static(reactFiles));
+
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  // res.send("hello world");
+  res.sendFile(path.join(reactFiles + "/index.html"));
+});
+
+app.get("/recipes/new", (req, res) => {
+  // res.send("hello world");
+  res.sendFile(path.join(reactFiles + "/index.html"));
+});
+
+app.get("/recipes/edit/*", (req, res) => {
+  // res.send("hello world");
+  res.sendFile(path.join(reactFiles + "/index.html"));
 });
 
 //Image Uploader

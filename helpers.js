@@ -11,8 +11,8 @@ const bucket = gc.bucket("recipe-share-images"); // should be your bucket name
  *   "originalname" and "buffer" as keys
  */
 
-const uploadImage = (file) =>
-  new Promise((resolve, reject) => {
+const uploadImage = (file) => {
+  return new Promise((resolve, reject) => {
     const { originalname, buffer } = file;
 
     const blob = bucket.file(originalname.replace(/ /g, "_"));
@@ -31,5 +31,6 @@ const uploadImage = (file) =>
       })
       .end(buffer);
   });
+};
 
 module.exports = uploadImage;
