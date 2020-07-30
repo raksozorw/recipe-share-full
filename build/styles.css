@@ -1,0 +1,107 @@
+div {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* Header */
+.header img:hover {
+    opacity: 90%;
+    text-decoration: none;
+}
+
+.header:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+    color:white;
+    background-color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.nav-link {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 8px;
+    margin-left: 2px
+    
+}
+
+.nav-link:hover {
+    color: #ff1616;
+}
+
+.logo {
+    width: 15rem;
+    padding-right: 20px;
+   
+}
+
+/* RecipeList */
+
+
+.recipe-list h3 {
+    color: black;
+    background-color: #FFD330;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 50px;
+    padding: 20px;
+    
+}
+
+.recipe-list h1 {
+    text-align: center;
+    font-size: 60px;
+    padding: 50px;
+}
+
+.recipe-list .list-group-item h3 {
+    text-align: center;
+}
+
+.recipe-list .wrapper {
+    display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.recipe-list .grid-one {
+grid-column: 1;
+grid-row: 1;
+}
+
+.recipe-list .grid-two {
+    grid-column: 2;
+grid-row: 1;
+}
+
+.recipe-list .info {
+    padding: 60px;
+    font-size: 20px;
+}
+
+.recipe-list .img-fluid {
+    max-width: 30rem;
+    border-style: solid;
+    border-color: #FFD330;
+    padding: 20px;
+    margin: 20px;
+
+}
+
+
+
+
+
+
+
