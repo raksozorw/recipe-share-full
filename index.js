@@ -80,7 +80,6 @@ app.post("/upload", async (req, res) => {
     //   }
   } catch (error) {
     console.log(error);
-    next(error);
   }
 
   // file.mv(

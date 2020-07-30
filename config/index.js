@@ -3,11 +3,11 @@ const path = require("path");
 require("dotenv").config();
 const serviceKey2 = process.env.GOOGLE_CREDENTIALS;
 
-// const serviceKey = path.join(__dirname, "./keys.json");
+const serviceKey = path.join(__dirname, "./keys.js");
 
 const { Storage } = Cloud;
 const storage = new Storage({
-  keyFilename: serviceKey2,
+  keyFilename: serviceKey,
   projectId: "streaming-278216",
 });
 
