@@ -4,12 +4,13 @@ const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const uploadImage = require("./helpers");
 const path = require("path");
+require("dotenv").config();
 
 const db = require("./db");
 const recipeRouter = require("./routes/recipe-router");
 
 const app = express();
-const apiPort = 8000;
+const apiPort = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
