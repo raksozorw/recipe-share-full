@@ -51,7 +51,7 @@ const makeId = (length) => {
   return result;
 };
 
-app.post("/api/upload", async (req, res) => {
+app.post("/upload", async (req, res) => {
   console.log("upload request made");
   console.log(req);
   // res.sendFile(path.join(reactFiles + "/index.html"));
