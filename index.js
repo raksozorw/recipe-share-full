@@ -23,20 +23,20 @@ const reactFiles = path.join(__dirname, "./build");
 
 app.use(express.static(reactFiles));
 
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
   // res.send("hello world");
   res.sendFile(path.join(reactFiles + "/index.html"));
 });
 
-app.get("/recipes/new", (req, res) => {
-  // res.send("hello world");
-  res.sendFile(path.join(reactFiles + "/index.html"));
-});
+// app.get("/recipes/new", (req, res) => {
+//   // res.send("hello world");
+//   res.sendFile(path.join(reactFiles + "/index.html"));
+// });
 
-app.get("/recipes/edit/*", (req, res) => {
-  // res.send("hello world");
-  res.sendFile(path.join(reactFiles + "/index.html"));
-});
+// app.get("/recipes/edit/*", (req, res) => {
+//   // res.send("hello world");
+//   res.sendFile(path.join(reactFiles + "/index.html"));
+// });
 
 //Image Uploader
 
