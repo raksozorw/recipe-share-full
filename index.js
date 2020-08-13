@@ -33,15 +33,15 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(reactFiles + "/index.html"));
 });
 
-// app.get("/recipes/new", (req, res) => {
-//   // res.send("hello world");
-//   res.sendFile(path.join(reactFiles + "/index.html"));
-// });
+app.get("/recipes/new", (req, res) => {
+  // res.send("hello world");
+  res.sendFile(path.join(reactFiles + "/index.html"));
+});
 
-// app.get("/recipes/edit/*", (req, res) => {
-//   // res.send("hello world");
-//   res.sendFile(path.join(reactFiles + "/index.html"));
-// });
+app.get("/recipes/edit/*", (req, res) => {
+  // res.send("hello world");
+  res.sendFile(path.join(reactFiles + "/index.html"));
+});
 
 //Image Uploader
 
