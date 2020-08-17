@@ -43,6 +43,11 @@ app.get("/recipes/edit/*", (req, res) => {
   res.sendFile(path.join(reactFiles + "/index.html"));
 });
 
+app.get("/recipes/editphoto/*", (req, res) => {
+  // res.send("hello world");
+  res.sendFile(path.join(reactFiles + "/index.html"));
+});
+
 //Image Uploader
 
 const makeId = (length) => {
