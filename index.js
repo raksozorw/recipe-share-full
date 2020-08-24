@@ -24,27 +24,22 @@ const reactFiles = path.join(__dirname, "./build");
 app.use(express.static(reactFiles));
 
 app.get("/", (req, res) => {
-  // res.send("hello world");
   res.sendFile(path.join(reactFiles + "/index.html"));
 });
 
 app.get("/recipes", (req, res) => {
-  // res.send("hello world");
   res.sendFile(path.join(reactFiles + "/index.html"));
 });
 
 app.get("/recipes/new", (req, res) => {
-  // res.send("hello world");
   res.sendFile(path.join(reactFiles + "/index.html"));
 });
 
 app.get("/recipes/edit/*", (req, res) => {
-  // res.send("hello world");
   res.sendFile(path.join(reactFiles + "/index.html"));
 });
 
 app.get("/recipes/editphoto/*", (req, res) => {
-  // res.send("hello world");
   res.sendFile(path.join(reactFiles + "/index.html"));
 });
 
@@ -64,7 +59,6 @@ const makeId = (length) => {
 app.post("/upload", async (req, res) => {
   console.log("upload request made");
   console.log(req);
-  // res.sendFile(path.join(reactFiles + "/index.html"));
   if (req.files === null) {
     return res.status(400).json({ msg: "no file was uploaded" });
   }
@@ -91,18 +85,6 @@ app.post("/upload", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-
-  // file.mv(
-  //   `/Users/oskarwroz/Documents/WebDev-Projects/recipe-share-app/client/public/uploads/${fileName}`,
-  //   (err) => {
-  //     if (err) {
-  //       console.error(err);
-  //       return res.status(500).send("it ain't there");
-  //     }
-
-  //     res.json({ fileName: fileName, filePath: `/uploads/${fileName}` });
-  //   }
-  // );
 });
 
 app.use("/api", recipeRouter);
